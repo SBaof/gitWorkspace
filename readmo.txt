@@ -1,4 +1,5 @@
 Git is a distributed version control system
 Git is free softwar
 Git is very useful
-Git made feel a little diffeculd
+Git made feel a little difficult
+Git is not so easy

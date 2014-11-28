@@ -1,0 +1,46 @@
+一. 创建版本库
+(1) 初始化一个Git仓库,使用git init命令
+(2) 添加文件到Git仓库,分为两步:
+	第一步,使用命令git add <file> 注意:可以反复使用多次,添加多个文件;
+	实际上是把文件从工作区(Working Directory)添加到了暂存区(stage)
+	第二步,使用命令git commit,完成将文件提交到仓库;
+	实际上是把文件从暂存区添加到了当前分支(master)
+	例:
+	git add readme.txt
+	git commit -m "what have you done"
+
+二. 时光机穿梭
+(1) 要随掌握工作区的状态,使用git status命令
+(2) 如果git status告诉你文件被修改过,用git diff可以查看修改内容
+(3) HEAD指向的版本就是当前版本,因此,git允许我们在版本之间穿梭,使用命令
+	git reset --hard commit_id
+	回到上一个版本,使用命令
+	git reset --hard HEAD^
+	回到上上个版本,使用命令
+	git reset --hard HEAD^^
+	回到100个以前的版本,使用命令
+	git reset --hard HEAD~100
+(4) 穿梭前,用git log可以查看提交历史,以便确保要退回到哪个版本
+	(添加--pretty=oneline单行显示)
+(5) 要重返未来,用git reflog查看命令历史,以确保要回到未来的哪个版本
+
+三. 管理修改
+    Git跟踪的是修改而不是文件,每次修改后,如果不add到暂存区,则不会加入到
+	commit中去
+
+四. 撤销修改
+	场景1 : 当你改乱了工作区的某个文件的内容,想直接丢弃工作去的修改时,
+	使用命令:git chechout -- file_name
+	场景2 : 当你不但改乱了工作区的某个文件,而且将文件add到了暂存区,想要丢弃
+	修改,分两步走:
+		第一步: 使用命令 ; git reset HEAD file_name,就退回到场景1
+		第二步: 按照场景1操作恢复即可
+	场景3 : 已经提交了不适合的修改到版本库,想要撤销修改,参考(二)中回到上一个
+	版本的方法
+
+五. 删除文件
+	命令git rm用于删除一个文件,如果一个文件已经被提交到了版本库,那么永远不用
+	担心误删,但是只能恢复到最新版本,会丢失最近一次提交后修改的内容
+	使用命令: git checkout -- file_name恢复
+	使用命令: git rm 
+			  git commit -m "what you do"彻底删除

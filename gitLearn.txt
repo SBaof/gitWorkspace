@@ -44,3 +44,21 @@
 	使用命令: git checkout -- file_name恢复
 	使用命令: git rm 
 			  git commit -m "what you do"彻底删除
+
+六. 远程仓库
+	第一步: 创建SSH Key	在用户目录下,看看有没有.shh目录,若有看看.shh下有没
+	有id_rsa和id_rsa.pub两个文件,如果没有,使用命令:
+	ssh-keygen -t rsa -C "youremail@example.com"
+	第二步. 登陆GitHub,打开"Account Setting",选择"Add SSH Key",然后填上任意
+	Title,在Key文本框中粘贴id_rsa_pub文件的内容
+	到这里已经获取了远程仓库
+
+	添加远程库
+	关联一个远程库,使用命令:
+	git remote add origin git@github.com:path/repo-name.git
+	关联后,使用命令:
+	git push -u origin master
+	第一次推送master分支的内容
+	此后,没一次本地提交后,只要有必要,就可以使用命令:
+	git push origin master
+	推送新的修改

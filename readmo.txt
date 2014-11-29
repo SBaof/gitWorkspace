@@ -9,8 +9,4 @@ Creating a new branch is quick AND simple
 Creating a new branch is quick AND simple
 >>>>>>> feature1
 merge
-<<<<<<< HEAD
 Git is a good free software
-=======
-Git is a good free software
->>>>>>> issue-101

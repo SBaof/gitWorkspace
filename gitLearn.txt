@@ -151,3 +151,21 @@
 			但是分支是可以移动的,标签不可以移动),所以,创建和删除标签都是在
 	瞬间完成的
 
+	创建标签
+	命令: git tag <name> 用于新建一个标签,默认为HEAD,也可以指定一个commit_id
+	git tag -a <tag-name> -m "balabalabala..."可以指定标签信息
+	git tag -s <tag-name> -m "balabalabala..."可以用PGP签名标签
+	命令git tag可以查看所有标签
+	命令git tag v*.*可以查看某一个标签
+	操作标签
+	命令git push origin <tag-name> 可以推送一个本地标签到远端
+	命令git push origin --tags 可以推送全部未为推送过的本地标签
+	命令git tag -d <tag-name> 可以删除一个本地标签
+	命令git push origin :refs/tags/<tag-name>可以删除一个远程标签
+		首先应该删除本地的标签
+
+九. 使用GitHub
+	在GitHub上,刻意人意Fork开源仓库
+	自己拥有Fork后的仓库的读写权限
+	可以推送pull request给官方仓库来贡献代码
+	

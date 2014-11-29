@@ -4,3 +4,4 @@ Git is very useful
 Git made feel a little difficult
 Git is not so easy but I'll try to do
 Creating a new branch is quick
+Creating a new branch is Simple
